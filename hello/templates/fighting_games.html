@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Fighting Games{% endblock title %}
+{% block body %}
+<div style="background-color: rgba(12,18,23,1); margin-bottom: 40px;">
+<div style="color: aliceblue; margin-bottom: 40px;"><center><h1>Fighting Games</h1></center></div>
+
+
+<!-- game content -->
+
+<div  class="row">
+ {% for game in games %}
+ {% if game.game_type == 'fighting_game' %}
+  <div class="col my-3 ">
+    <div class="card bg-dark m-2" style="width: 18rem;">
+      <img height="300px" width="100px" class="card-img-top" src="{{game.image_url}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 style="color: aliceblue;" class="card-title">{{game.name}}</h5>
+        
+        <a  href="{{game.dawnload_link}}" class="btn btn-info">Dawnload</a>
+      </div>
+    </div>
+
+  </div>
+  {% endif %}
+  {% endfor %}
+  
+
+</div>
+</div>
+{% endblock body %}
