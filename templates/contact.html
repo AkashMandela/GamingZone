@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Contact Us{% endblock title %}
+{% block body %}
+<div style="height: 100%; width: 100%; background:aliceblue; background-size: cover; opacity: 1;">
+<div style="margin-bottom: 20px;">
+    <center>
+    <img src="https://img.freepik.com/free-photo/hot-line-contact-us-call-center-search-interface_53876-124009.jpg" height="400px" width="900px">
+</center>
+</div>
+<div style="height: 600px; width: 900px; margin-left: 20%;">
+   <!-- <h1><center>Contact Us</center></h1>  -->
+    <form method="post" action="/contact">
+      {% csrf_token %}
+        <div class="form-group">
+          <label for="Name">Name</label>
+          <input type="Name" class="form-control" name="name" id="name" placeholder="Enter Your Name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="phone" class="form-control" name="phone" id="phone" placeholder="Enter your phone number">
+          </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Submit your Issue Here</label>
+          <textarea class="form-control" name="desc" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-success" type="submit" >Submit</button>
+        </div>
+      </form>
+   </div>
+</div>
+{% endblock body %}
